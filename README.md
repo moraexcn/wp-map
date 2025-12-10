@@ -2,6 +2,15 @@
 
 基于高德地图API的WordPress足迹地图插件，支持添加地点标记、描述和前端地图自定义展示。
 
+## 前端预览
+<img width="800" height="937" alt="image" src="https://github.com/user-attachments/assets/f5db3e8e-5f74-4a6a-995b-b30ae6f2b5e0" />
+<img width="800" height="935" alt="image" src="https://github.com/user-attachments/assets/4ac2e6bd-b82f-47e8-8875-ee16ccfc24d2" />
+
+## 后台预览
+<img width="800" height="580" alt="image" src="https://github.com/user-attachments/assets/cd6e0ba9-f082-4ae8-a0aa-0467a6f56cdc" />
+<img width="800" height="955" alt="image" src="https://github.com/user-attachments/assets/5986f4fa-62a1-4c3e-a33e-ad79a5bf50dc" />
+<img width="800" height="961" alt="image" src="https://github.com/user-attachments/assets/1287c109-e721-4675-884a-9f357aead124" />
+
 ## 功能特点
 
 -  **地图标记管理** - 在地图上添加、编辑、删除足迹标记
@@ -133,14 +142,12 @@ wp-map/
 
 ## 更新日志
 
-### v1.0. (2025-12-10)
-- 删除单个足迹显示功能，简化插件结构
-- 在添加足迹页面添加"查看地图"按钮，方便实时预览
-- 优化前端地图加载体验，解决灰屏闪烁问题
-- 添加PHP 8.3+和WordPress 6.8+版本要求
+### v1.0  (2025-12-10)
+- 插件初始版本
 
 ## 许可证
 
 本插件采用GPL v2.0或更高版本许可证。详见[LICENSE](LICENSE)文件。
+
 
 
