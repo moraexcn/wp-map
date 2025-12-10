@@ -23,8 +23,7 @@
 
 ### 1. 下载插件
 
-从GitHub仓库下载最新版本的插件压缩包，或在WordPress后台直接搜索"WordPress足迹地图"进行安装。
-
+从GitHub仓库下载最新版本的插件压缩包。
 ### 2. 上传安装
 
 1. 登录WordPress后台，进入"插件" -> "安装插件"
@@ -133,43 +132,12 @@ wp-map/
 
 ## 更新日志
 
-### v1.0.1 (2024-12-10)
+### v1.0. (2025-12-10)
 - 删除单个足迹显示功能，简化插件结构
 - 在添加足迹页面添加"查看地图"按钮，方便实时预览
 - 优化前端地图加载体验，解决灰屏闪烁问题
 - 添加PHP 8.3+和WordPress 6.8+版本要求
 
-### v1.0.0 (2023-XX-XX)
-- 初始版本发布
-- 支持基本的足迹添加和管理功能
-- 集成高德地图API
-- 提供基础的前端地图展示
-
-## 技术支持
-
-如果您在使用过程中遇到问题，可以通过以下方式获取帮助：
-- 插件官网：[https://www.moraex.com/wp-map](https://www.moraex.com/wp-map)
-- 提交Issue：[GitHub Issues](https://github.com/your-repo/wp-map/issues)
-- 邮箱联系：support@moraex.com
-
-## 贡献指南
-
-欢迎为插件贡献代码！请遵循以下步骤：
-
-1. Fork本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启Pull Request
-
 ## 许可证
 
 本插件采用GPL v2.0或更高版本许可证。详见[LICENSE](LICENSE)文件。
-
-## 致谢
-
-感谢高德地图API提供的优秀地图服务支持。
-
----
-
-**WordPress足迹地图** - 记录您的足迹，分享您的旅程。
