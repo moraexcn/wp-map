@@ -2,6 +2,10 @@
 
 基于高德地图API的WordPress足迹地图插件，支持添加地点标记、描述和前端地图自定义展示。
 
+## 关于key密钥防止盗刷的说明
+所有 key 密钥的 ip 和域名白名单必须填写
+插件不对密钥额度被刷负责！
+
 ## 前端预览
 <img width="800" height="937" alt="image" src="https://github.com/user-attachments/assets/f5db3e8e-5f74-4a6a-995b-b30ae6f2b5e0" />
 <img width="800" height="935" alt="image" src="https://github.com/user-attachments/assets/4ac2e6bd-b82f-47e8-8875-ee16ccfc24d2" />
@@ -147,6 +151,7 @@ wp-map/
 ## 许可证
 
 本插件采用GPL v2.0或更高版本许可证。详见[LICENSE](LICENSE)文件。
+
 
 
 
