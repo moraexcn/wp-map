@@ -1,0 +1,138 @@
+/**
+ * WordPress 足迹地图 - 前台样式
+ */
+
+.wp-map-container {
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.wp-map-title {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: #333;
+    text-align: center;
+}
+
+.wp-map-wrapper {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: #f5f5f5;
+    height: 100%;
+    width: 100%;
+}
+
+.wp-map-map {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.wp-map-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.wp-map-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.wp-map-error {
+    padding: 20px;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* 信息窗口样式 */
+.wp-map-info-window {
+    max-width: 300px;
+}
+
+.wp-map-info-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.wp-map-info-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.wp-map-info-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.wp-map-info-tags {
+    margin-bottom: 10px;
+}
+
+.wp-map-tag {
+    display: inline-block;
+    background: #e7e7e7;
+    color: #333;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.wp-map-info-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.wp-map-info-link:hover {
+    background: #2980b9;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .wp-map-map {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wp-map-map {
+        height: 300px;
+    }
+}

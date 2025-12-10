@@ -1,0 +1,684 @@
+/**
+ * WordPress 足迹地图 - 后台样式
+ * 与WordPress后台样式保持一致
+ */
+
+.wp-map-container {
+    margin: 10px 10px 10px 0;
+}
+
+/* 使用WordPress标准标题样式 */
+.wp-map-container h1 {
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 29px;
+    margin: 0;
+    padding: 9px 15px 4px 0;
+}
+
+.wp-map-container .wp-map-subtitle {
+    font-size: 14px;
+    color: #646970;
+    margin: 0 0 15px 0;
+}
+
+/* 使用WordPress表单样式 */
+.wp-map-form {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    margin-top: 20px;
+}
+
+.wp-map-form-group {
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.wp-map-form-group:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 25px;
+}
+
+.wp-map-form-group:first-child {
+    padding-top: 20px;
+}
+
+.wp-map-form-group:last-child {
+    padding-bottom: 20px;
+    border-bottom: none;
+}
+
+.wp-map-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #1d2327;
+    line-height: 1.4;
+}
+
+.wp-map-form-group .description {
+    color: #646970;
+    font-size: 13px;
+    font-style: normal;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+/* 重要说明样式 - 主要说明 */
+.wp-map-form-group .description.important {
+    color: #d63638;
+    font-weight: 500;
+    background: #fcf0f1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 3px solid #d63638;
+}
+
+/* 次要说明样式 */
+.wp-map-form-group .description.secondary {
+    color: #8c8f94;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* 链接样式 */
+.wp-map-form-group .description a {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.wp-map-form-group .description a:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* 表单组标题层级 */
+.wp-map-form-group h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.wp-map-form-group h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3338;
+    margin: 0 0 10px 0;
+}
+
+/* 子标签样式 */
+.wp-map-color-label,
+.wp-map-coord-label {
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    color: #3c434a !important;
+    margin-bottom: 4px !important;
+}
+
+/* 颜色设置组样式 */
+.wp-map-color-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.wp-map-color-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e2e4e7;
+}
+
+.wp-map-color-group label {
+    margin-bottom: 0 !important;
+    min-width: 140px;
+    font-weight: 500 !important;
+}
+
+.wp-map-color-group input[type="color"] {
+    width: 60px !important;
+    height: 40px !important;
+    border: 2px solid #dcdcde;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.wp-map-color-group input[type="color"]:hover {
+    border-color: #a7aaad;
+}
+
+.wp-map-color-group input[type="color"]:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.wp-map-color-preview {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* 输入框焦点状态 */
+.wp-map-form-group input:focus,
+.wp-map-form-group select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+/* 表单组间距优化 */
+.wp-map-form-group {
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+
+.wp-map-form-group:first-child {
+    padding-top: 25px;
+}
+
+.wp-map-form-group:last-child {
+    padding-bottom: 25px;
+}
+
+.wp-map-form-group input[type="text"],
+.wp-map-form-group input[type="date"],
+.wp-map-form-group input[type="number"],
+.wp-map-form-group input[type="color"],
+.wp-map-form-group input[type="url"],
+.wp-map-form-group select,
+.wp-map-form-group textarea {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.wp-map-form-group textarea {
+    min-height: 100px;
+}
+
+.wp-map-form-group .required {
+    color: #d63638;
+    margin-left: 3px;
+}
+
+.wp-map-form-actions {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #dcdcde;
+    background: #f6f7f7;
+}
+
+/* 使用WordPress按钮样式 */
+.wp-map-button {
+    background: #2271b1;
+    border: 1px solid #2271b1;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    height: auto;
+    border-radius: 3px;
+}
+
+.wp-map-button:hover {
+    background: #135e96;
+    border-color: #135e96;
+    color: #fff;
+}
+
+.wp-map-button-secondary {
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    color: #3c434a;
+}
+
+.wp-map-button-secondary:hover {
+    background: #f0f0f1;
+    border-color: #8c8f94;
+    color: #3c434a;
+}
+
+.wp-map-button-danger {
+    background: #d63638;
+    border: 1px solid #d63638;
+    color: #fff;
+}
+
+.wp-map-button-danger:hover {
+    background: #b32d2e;
+    border-color: #b32d2e;
+    color: #fff;
+}
+
+/* 地图容器 */
+.wp-map-map-container {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #dcdcde;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.wp-map-coords-display {
+    background: #f6f7f7;
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    color: #3c434a;
+    margin-bottom: 20px;
+    border-top: 1px solid #dcdcde;
+    border-bottom: 1px solid #dcdcde;
+}
+
+/* 使用WordPress表格样式 */
+.wp-map-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.wp-map-list-table th,
+.wp-map-list-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #dcdcde;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 13px;
+    line-height: 1.4;
+    height: 44px; /* 统一表格行高度 */
+}
+
+/* 确保足迹列表表格的行高统一 */
+.wp-list-table.widefat.fixed.striped.table-view-list tbody tr {
+    height: 44px;
+}
+
+.wp-list-table.widefat.fixed.striped.table-view-list tbody td {
+    height: 44px;
+    vertical-align: middle;
+    line-height: 1.4;
+}
+
+/* 让row-actions操作链接始终保持显示 */
+.wp-list-table.widefat.fixed.striped.table-view-list .row-actions {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+}
+
+.wp-list-table.widefat.fixed.striped.table-view-list .has-row-actions .row-actions {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+}
+
+/* 确保操作列中的链接始终显示 */
+.wp-list-table.widefat.fixed.striped.table-view-list tbody td .row-actions {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+}
+
+/* 移除WordPress默认的悬停显示效果 */
+.wp-list-table.widefat.fixed.striped.table-view-list tbody tr:hover .row-actions,
+.wp-list-table.widefat.fixed.striped.table-view-list tbody .has-row-actions:hover .row-actions {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.wp-map-list-table th {
+    background: #f6f7f7;
+    font-weight: 600;
+    color: #2c3338;
+    border-bottom: 1px solid #c3c4c7;
+    padding: 8px 10px;
+}
+
+.wp-map-list-table tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.wp-map-list-table tr:hover {
+    background: #f0f6ff;
+}
+
+.wp-map-actions {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.wp-map-actions a {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    line-height: 1.4;
+    height: auto;
+}
+
+.wp-map-badge {
+    background: #dcdcde;
+    color: #3c434a;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 11px;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.wp-map-footprint-meta {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+.wp-map-tags {
+    margin-top: 4px;
+}
+
+/* WordPress分页样式 - 保持WordPress默认样式 */
+.wp-map-container .tablenav {
+    height: auto;
+    margin: 0 0 20px 0;
+}
+
+.wp-map-container .tablenav.top {
+    margin-bottom: 10px;
+}
+
+.wp-map-container .tablenav.bottom {
+    margin-top: 10px;
+}
+
+.wp-map-container .displaying-num {
+    font-size: 13px;
+    color: #646970;
+    margin-right: 10px;
+}
+
+/* 自定义分页样式，仅在我们自己的组件中使用 */
+.wp-map-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.wp-map-pagination .wp-map-alignleft {
+    display: flex;
+    align-items: center;
+}
+
+.wp-map-pagination .wp-map-alignright {
+    display: flex;
+    align-items: center;
+}
+
+.wp-map-pagination-pages {
+    text-align: right;
+    margin: 0;
+}
+
+.wp-map-pagination-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.wp-map-pagination-links .wp-map-button {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    line-height: 1.4;
+    height: auto;
+    min-width: 30px;
+    text-align: center;
+}
+
+.wp-map-pagination-links .wp-map-button.current {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+/* 前端地图预览样式 */
+.wp-map-frontend-preview-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.wp-map-frontend-preview-iframe {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    background: #f8f9fa;
+}
+
+/* 使用WordPress消息提示样式 */
+.wp-map-notice {
+    padding: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #72aee6;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.wp-map-notice-success {
+    border-left-color: #00a32a;
+}
+
+.wp-map-notice-error {
+    border-left-color: #d63638;
+}
+
+.wp-map-notice-info {
+    border-left-color: #72aee6;
+}
+
+/* 两栏布局 */
+.wp-map-add-layout {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+.wp-map-add-form-column {
+    width: 30%;
+    min-width: 0;
+}
+
+.wp-map-add-form-column .wp-map-form {
+    margin-top: 0;
+}
+
+.wp-map-add-map-column {
+    width: 70%;
+    min-width: 0;
+    padding: 0;
+}
+
+.wp-map-add-map-column .wp-map-form {
+    margin-top: 0;
+}
+
+.wp-map-add-map-column .wp-map-map-container {
+    height: 600px;
+    margin-right: 20px;
+}
+
+/* 设置页面布局 - 与添加足迹页面保持一致 */
+.wp-map-settings-layout {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+.wp-map-settings-sidebar {
+    width: 30%;
+    min-width: 0;
+}
+
+.wp-map-settings-sidebar .wp-map-form {
+    margin-top: 0;
+}
+
+.wp-map-settings-sidebar .card:first-child {
+    margin-top: 0;
+}
+
+.wp-map-preview-sidebar {
+    width: 70%;
+    min-width: 0;
+    padding-right: 20px;
+}
+
+.wp-map-preview-sidebar .card {
+    margin: 0;
+}
+
+.wp-map-preview-sidebar .wp-map-map-container {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+/* 坐标输入框样式 */
+.wp-map-coord-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.wp-map-coord-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.wp-map-coord-label {
+    font-weight: normal;
+    font-size: 13px;
+    color: #646970;
+    margin-bottom: 0;
+}
+
+.wp-map-coord-input {
+    width: 120px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.wp-map-coord-input:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+    outline: none;
+}
+
+.wp-map-coord-input::placeholder {
+    color: #a7aaad;
+    font-size: 13px;
+}
+
+/* 设置页面内容样式 */
+.wp-map-settings-section {
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.wp-map-settings-section:first-child {
+    padding-top: 20px;
+}
+
+.wp-map-settings-section:last-child {
+    padding-bottom: 20px;
+}
+
+.wp-map-settings-section h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dcdcde;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1d2327;
+}
+
+.wp-map-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.wp-map-settings-box {
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.wp-map-settings-box h4 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 782px) {
+    .wp-map-form-group input[type="text"],
+    .wp-map-form-group input[type="date"],
+    .wp-map-form-group input[type="number"],
+    .wp-map-form-group input[type="color"],
+    .wp-map-form-group input[type="url"],
+    .wp-map-form-group select,
+    .wp-map-form-group textarea {
+        max-width: 100%;
+    }
+    
+    .wp-map-list-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
