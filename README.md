@@ -116,6 +116,7 @@ wp-map/
 2. 创建应用并选择"Web服务"
 3. 获取"JavaScript API"和"Web服务API"的Key
 4. 在插件设置页面填入获取到的Key
+5. [高德地图 API 申请](https://www.moraex.com/wp-map)
 
 ### 地图不显示怎么办？
 
@@ -141,3 +142,4 @@ wp-map/
 ## 许可证
 
 本插件采用GPL v2.0或更高版本许可证。详见[LICENSE](LICENSE)文件。
+
