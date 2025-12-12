@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: WordPress 足迹地图
+ * Plugin Name: WP-Map 足迹地图
  * Plugin URI: https://www.moraex.com/wp-map
  * Description: 基于高德地图API的WordPress足迹地图插件，支持添加地点标记、描述和前端地图自定义展示。
- * Version: 1.0.0
+ * Version: 1.1.7
  * Author: MoraEX
  * Author URI: https://www.moraex.com/
  * License: GPL-2.0+
@@ -29,6 +29,7 @@ define('WP_MAP_PLUGIN_BASENAME', plugin_basename(__FILE__));
 require_once WP_MAP_PLUGIN_DIR . 'includes/class-wp-map-init.php';
 require_once WP_MAP_PLUGIN_DIR . 'includes/class-wp-map-install.php';
 require_once WP_MAP_PLUGIN_DIR . 'includes/class-wp-map-api.php';
+require_once WP_MAP_PLUGIN_DIR . 'includes/class-wp-map-shortcode.php';
 
 // 激活插件时的钩子
 register_activation_hook(__FILE__, array('WP_Map_Install', 'activate'));
@@ -51,6 +52,13 @@ function wp_map_run() {
 
 // 初始化API类
 new WP_Map_API();
+
+// 初始化短代码类并注册短代码
+function wp_map_register_shortcode() {
+    $shortcode = new WP_Map_Shortcode('wp-map', WP_MAP_VERSION);
+    $shortcode->register_shortcode();
+}
+add_action('init', 'wp_map_register_shortcode');
 
 // 运行插件
 wp_map_run();

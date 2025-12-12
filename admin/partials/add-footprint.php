@@ -67,8 +67,8 @@ if ($footprint) {
             _e('添加足迹', 'wp-map');
         }
         ?>
-        <a href="<?php echo home_url('/' . (isset($settings['map_path']) ? $settings['map_path'] : 'map')); ?>" class="page-title-action" target="_blank">
-            <?php _e('查看地图', 'wp-map'); ?>
+        <a href="<?php echo admin_url('admin.php?page=wp-map'); ?>" class="page-title-action">
+            <?php _e('足迹列表', 'wp-map'); ?>
         </a>
     </h1>
 
@@ -176,7 +176,6 @@ if ($footprint) {
                         <?php else : ?>
                             <button type="submit" class="wp-map-button"><?php _e('添加足迹', 'wp-map'); ?></button>
                         <?php endif; ?>
-                        <a href="<?php echo admin_url('admin.php?page=wp-map'); ?>" class="wp-map-button wp-map-button-secondary"><?php _e('返回列表', 'wp-map'); ?></a>
                     </div>
                 </div>
             </form>

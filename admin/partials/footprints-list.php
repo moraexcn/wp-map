@@ -56,12 +56,6 @@ $settings = $frontend->get_settings();
 <div class="wrap">
     <h1 class="wp-heading-inline"><?php _e('足迹列表', 'wp-map'); ?></h1>
     <a href="<?php echo admin_url('admin.php?page=wp-map-add'); ?>" class="page-title-action"><?php _e('添加足迹', 'wp-map'); ?></a>
-    <?php if (!empty($settings['amap_js_key'])) : ?>
-        <?php 
-        $map_path = isset($settings['map_path']) ? $settings['map_path'] : 'map';
-        ?>
-        <a href="<?php echo esc_url(home_url('/' . $map_path)); ?>" class="page-title-action" target="_blank"><?php _e('查看地图', 'wp-map'); ?></a>
-    <?php endif; ?>
     <hr class="wp-header-end">
 
     <?php if ($message) : ?>

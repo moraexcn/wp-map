@@ -110,19 +110,23 @@ class WP_Map_Frontend {
     public function register_rewrite_rules() {
         // 获取设置中的自定义路径
         $settings = $this->get_settings();
-        $map_path = isset($settings['map_path']) ? $settings['map_path'] : 'map';
         
-        // 只添加主地图页面重写规则，删除单个足迹页面规则
-        add_rewrite_rule(
-            '^' . $map_path . '/?$',
-            'index.php?wp_map_page=map',
-            'top'
-        );
-        
-        // 刷新重写规则（仅在插件激活时执行）
-        if (!get_option('wp_map_rewrite_rules_flushed')) {
-            flush_rewrite_rules();
-            update_option('wp_map_rewrite_rules_flushed', 1);
+        // 检查地图路径功能是否启用
+        if (isset($settings['map_path_enabled']) && $settings['map_path_enabled'] === 'yes') {
+            $map_path = isset($settings['map_path']) ? $settings['map_path'] : 'map';
+            
+            // 只添加主地图页面重写规则，删除单个足迹页面规则
+            add_rewrite_rule(
+                '^' . $map_path . '/?$',
+                'index.php?wp_map_page=map',
+                'top'
+            );
+            
+            // 刷新重写规则（仅在插件激活时执行）
+            if (!get_option('wp_map_rewrite_rules_flushed')) {
+                flush_rewrite_rules();
+                update_option('wp_map_rewrite_rules_flushed', 1);
+            }
         }
     }
     
@@ -141,9 +145,20 @@ class WP_Map_Frontend {
         $page = get_query_var('wp_map_page');
         
         if ($page === 'map') {
-            // 只处理主地图页面
-            include_once WP_MAP_PLUGIN_DIR . 'templates/map-page.php';
-            exit;
+            // 检查地图路径功能是否启用
+            $settings = $this->get_settings();
+            if (isset($settings['map_path_enabled']) && $settings['map_path_enabled'] === 'yes') {
+                // 只处理主地图页面
+                include_once WP_MAP_PLUGIN_DIR . 'templates/map-page.php';
+                exit;
+            } else {
+                // 如果功能未启用，显示404页面
+                global $wp_query;
+                $wp_query->set_404();
+                status_header(404);
+                get_template_part(404);
+                exit;
+            }
         }
     }
 
@@ -202,7 +217,9 @@ class WP_Map_Frontend {
             'map_theme' => 'whitesmoke',
             'map_height' => '500px',
             'show_filter' => 'yes',
-            'enable_clustering' => 'yes'
+            'enable_clustering' => 'yes',
+            'shortcode_enabled' => 'no',
+            'map_path_enabled' => 'no'
         );
         
         return wp_parse_args($settings, $defaults);

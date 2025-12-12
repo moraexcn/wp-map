@@ -274,6 +274,8 @@ class WP_Map_Admin {
         $sanitized['button_color_detail'] = sanitize_hex_color($input['button_color_detail']);
         $sanitized['map_theme'] = sanitize_text_field($input['map_theme']);
         $sanitized['map_height'] = sanitize_text_field($input['map_height']);
+        $sanitized['shortcode_enabled'] = isset($input['shortcode_enabled']) && $input['shortcode_enabled'] === 'yes' ? 'yes' : 'no';
+        $sanitized['map_path_enabled'] = isset($input['map_path_enabled']) && $input['map_path_enabled'] === 'yes' ? 'yes' : 'no';
 
         // 验证地图路径
         if (empty($sanitized['map_path'])) {
@@ -283,9 +285,13 @@ class WP_Map_Admin {
         // 确保地图路径只包含字母、数字和连字符
         $sanitized['map_path'] = preg_replace('/[^a-z0-9\-]/i', '', $sanitized['map_path']);
         
-        // 如果路径改变了，需要刷新重写规则
+        // 检查是否需要刷新重写规则
         $current_path = $this->get_setting('map_path');
-        if ($current_path && $current_path !== $sanitized['map_path']) {
+        $current_enabled = $this->get_setting('map_path_enabled');
+        
+        // 如果路径改变了或者启用状态改变了，需要刷新重写规则
+        if (($current_path && $current_path !== $sanitized['map_path']) || 
+            ($current_enabled !== $sanitized['map_path_enabled'])) {
             // 重置重写规则标志
             update_option('wp_map_rewrite_rules_flushed', 0);
             // 触发重写规则刷新
