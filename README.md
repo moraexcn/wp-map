@@ -5,15 +5,6 @@
 ## 关于key密钥防止盗刷的说明
 **`所有 key 密钥的 ip 和域名白名单必须填写，插件不对密钥额度被刷负责！`**
 
-## 前端预览
-<img width="800" height="937" alt="image" src="https://github.com/user-attachments/assets/f5db3e8e-5f74-4a6a-995b-b30ae6f2b5e0" />
-<img width="800" height="935" alt="image" src="https://github.com/user-attachments/assets/4ac2e6bd-b82f-47e8-8875-ee16ccfc24d2" />
-
-## 后台预览
-<img width="800" height="580" alt="image" src="https://github.com/user-attachments/assets/cd6e0ba9-f082-4ae8-a0aa-0467a6f56cdc" />
-<img width="800" height="955" alt="image" src="https://github.com/user-attachments/assets/5986f4fa-62a1-4c3e-a33e-ad79a5bf50dc" />
-<img width="800" height="961" alt="image" src="https://github.com/user-attachments/assets/1287c109-e721-4675-884a-9f357aead124" />
-
 ## 功能特点
 
 -  **地图标记管理** - 在地图上添加、编辑、删除足迹标记
@@ -144,12 +135,24 @@ wp-map/
 
 ## 更新日志
 
+### v1.1.7  (2025-12-12)
+【维护】
+1. 修复了添加足迹页面和足迹设置页面在移动端的显示问题。
+2. 移除了足迹设置页面的地图预览框
+3. 修正了部分功能的说明
+4. 移除了多余的无关按钮
+
+【功能】
+1. 新增插件的短代码功能，支持自定义嵌入到文章与页面中。
+2. 新增地图路径功能和短代码功能的开关选项。
+
 ### v1.0  (2025-12-10)
 - 插件初始版本
 
 ## 许可证
 
 本插件采用GPL v2.0或更高版本许可证。详见[LICENSE](LICENSE)文件。
+
 
 
 
