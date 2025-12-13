@@ -28,6 +28,14 @@ class WP_Map_Install {
     }
 
     /**
+     * 插件删除时调用
+     */
+    public static function uninstall() {
+        self::drop_tables();
+        self::cleanup_options();
+    }
+
+    /**
      * 插件更新时调用
      */
     public static function update() {
@@ -101,9 +109,10 @@ class WP_Map_Install {
         $default_settings = array(
             'amap_js_key' => '',
             'amap_web_key' => '',
-            'map_path' => 'map',
-            'page_title' => '足迹地图',
-            'map_zoom' => '10',
+            'map_path' => 'maps',
+            'page_title' => 'WP-Map 足迹地图',
+            'page_description' => '基于高德地图 API 的 WordPress 足迹地图插件，支持添加地点标记、描述和前端地图自定义展示。',
+            'map_zoom' => '4',
             'map_center_lat' => '39.9042',
             'map_center_lng' => '116.4074',
             'marker_color_default' => '#FF5722',
@@ -129,5 +138,28 @@ class WP_Map_Install {
                 array('%s', '%s')
             );
         }
+    }
+
+    /**
+     * 删除数据库表
+     */
+    private static function drop_tables() {
+        global $wpdb;
+
+        // 足迹表
+        $footprints_table = $wpdb->prefix . 'footprints';
+        $wpdb->query("DROP TABLE IF EXISTS $footprints_table");
+
+        // 设置表
+        $settings_table = $wpdb->prefix . 'footprints_settings';
+        $wpdb->query("DROP TABLE IF EXISTS $settings_table");
+    }
+
+    /**
+     * 清理WordPress选项
+     */
+    private static function cleanup_options() {
+        // 删除插件版本选项
+        delete_option('wp_map_version');
     }
 }

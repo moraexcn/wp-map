@@ -159,10 +159,10 @@ class WP_Map_Shortcode {
             }
 
             loadAmapAPI(function() {
-                initShortcodeMap('<?php echo esc_js($map_id); ?>', <?php echo json_encode($atts); ?>);
+                initShortcodeMap('<?php echo esc_js($map_id); ?>');
             });
 
-            function initShortcodeMap(mapId, atts) {
+            function initShortcodeMap(mapId) {
                 var $container = $('#' + mapId);
                 var $mapElement = $container.find('.wp-map-map');
                 
